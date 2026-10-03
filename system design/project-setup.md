@@ -110,7 +110,7 @@ React + Vite projects . Vits supports ESM for source modules, while supports cjs
 npm run dev -> Vite -> development server -> .env.development -> src/config/env -> React 
 and similarly npm run build for production.
 How this works.
-Vite looks for scripts inside the package.json
+Vite looks for scripts inside the package.json with npm run
 
 # Export types
 Choose any export type . named or default. 
@@ -134,7 +134,7 @@ add inside package.json scripts : "staging": "vite --mode staging"
 Add .env.staging if need.
 
 npm run staging will start a dev server but with staging creds.
-npm build staging will create a build but with staging creds.
+npm build staging will create a prod build but with staging creds.
 
 # setup in new machine/system
 git clone
