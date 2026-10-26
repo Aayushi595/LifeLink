@@ -13,9 +13,9 @@ component writing -> state -> props -> API integration -> custom hook.
 Uptil here, are thinking steps and noting on paper
 
 Now actions : 
-4) Project setup & Basic Library install:
+4) Project setup & Basic Library install, routing, decide ad setup css.
 
-5) component deisgn as thought in lld.
+5) component design as thought in lld
 
 6) Edge cases
 
@@ -43,7 +43,7 @@ Note :  1 email can have one donor and 1 patient account.
 
 
 # HLD 
-1) Authentication ans session - how long a user remains validated , system knows that the user is existing. When exactly the user will be logged out.
+1) Authentication and session - how long a user remains validated , system knows that the user is existing. When exactly the user will be logged out.
 - possible tech stack - db authentication, firebase auth, AuthO (Very capable, but probably more infrastructure than you need for this project), Other Third-party (but extra platform involved), 
 - we'll choose => firebase auth , because frontend-heavy project. It provides local, session (survives page refreshes, ends when tab/browser is closed) and none - (cannot survive page refreshes) peristence types. we will choose localstorage. We can customize also (eg. after 30 days of inactivity)
 
@@ -54,12 +54,14 @@ ques. Why we will not use firebase authenticated object ?
 donor → patient → donor without changing their authentication identity. Can be used for fixed role like user is admin, and not currently the user is using admin side. Also, changing Firebase custom claims involves backend/admin operations and token propagation. You don't want a server round-trip/token refresh every time the user switches.
 
 ques. Why not use db ? 
-The user is logged-in in laptop as donor. the same user account then logs in from mobile as patient, then in the next api call or page refresh , based on the response rhe the laptop user will become donor. this is not correct.
+The user is logged-in in laptop as donor. the same user account then logs in from mobile as patient, then in the next api call or page refresh , based on the response the laptop user will become donor. This is not correct.
 
 - We will choose : zustand . Since the activeMode is app's global state we will use state management and zustand is lightweight and good choose of light state. And with its persistence middleware, it can synchronize that state with storage.
 zustand + will the store this state in-memory that is when the app is running. when tab is closed and reopened - it rehydrates and bring back state.
 
 3) Storing emergency request
+db .
+
 
 
 

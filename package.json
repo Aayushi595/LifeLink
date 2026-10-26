@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "staging": "vite --mode staging"
+    "staging": "vite --mode staging",
+    "build:staging": "tsc -b && vite build --mode staging",
+    "start" : "tsc -b && vite build"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.104.0",
